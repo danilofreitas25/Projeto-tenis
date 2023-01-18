@@ -1,0 +1,7 @@
+{
+  "name": "loja_tenis",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
