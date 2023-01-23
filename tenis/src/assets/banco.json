@@ -1,0 +1,23 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "Danilo",
+      "cpf": "123.456.789-00",
+      "imagem": "https://cdn.pixabay.com/photo/2017/02/28/15/26/man-2106040_960_720.jpg",
+      "email": "email@email.com",
+      "senha": "senha"
+    }
+  ],
+  "tenis": [
+    {
+      "id": 1,
+      "tenis": "Danilo",
+      "valor": 99.99,
+      "imagem": "https://cdn.pixabay.com/photo/2016/06/03/17/35/shoes-1433925_960_720.jpg",
+      "info": "Tênis que é pisante",
+      "favorito": true,
+      "carrinho": true
+    }
+  ]
+}

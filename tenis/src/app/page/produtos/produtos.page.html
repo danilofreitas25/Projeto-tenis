@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>produtos</ion-title>
+    <ion-button slot="end" (click)="setOpen(true)"><ion-icon name="cart"></ion-icon></ion-button>
+    <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="warning">
+          <ion-title>Carrinho</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-list >      
+          <ion-item-sliding  *ngFor="let tenis of listaTenis">
+      
+            
+          <ion-item (click)="cartMetod(tenis)">
+
+            <ion-label *ngIf="tenis.carrinho"><strong> {{tenis.tenis}} </strong> R$ {{tenis.valor}} </ion-label>
+
+            
+            <ion-thumbnail slot="start">
+              <img *ngIf="tenis.carrinho" [src]="tenis.imagem"/>
+            </ion-thumbnail>
+          </ion-item>
+          
+          </ion-item-sliding>
+        
+        </ion-list>
+        
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list >      
+    <ion-item-sliding  *ngFor="let tenis of listaTenis">
+
+      
+    <ion-item (click)="actionMetod(tenis)">
+      <!--Bolinha Branca-->
+      <ion-icon name="heart-outline" *ngIf="!tenis.favorito"></ion-icon>
+      <ion-label *ngIf="!tenis.favorito"><strong> {{tenis.tenis}} </strong> R$ {{tenis.valor}} </ion-label>
+
+      <!--Bolinha Verde-->
+      <ion-icon name="heart" color="success" *ngIf="tenis.favorito"></ion-icon>
+      
+      <ion-label *ngIf="tenis.favorito"><strong> {{tenis.tenis}} </strong> R$ {{tenis.valor}} </ion-label>
+      <ion-thumbnail slot="start">
+        <img [src]="tenis.imagem"/>
+      </ion-thumbnail>
+    </ion-item>
+    
+    </ion-item-sliding>
+  
+  </ion-list>
+
+</ion-content>
